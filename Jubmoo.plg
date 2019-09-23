@@ -6,36 +6,38 @@
 --------------------Configuration: jubmoo - Win32 Release--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\kasam\AppData\Local\Temp\RSP1E1F.tmp" with contents
+Creating command line "rc.exe /l 0x409 /fo".\Release/jubmoo.res" /i "res" /i ".\res" /d "NDEBUG" "D:\workspace\win-dev\jubmoo\res\jubmoo.rc"" 
+Creating temporary file "C:\Users\kasam\AppData\Local\Temp\RSP6C5F.tmp" with contents
 [
 /nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/Jubmoo.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
-"D:\workspace\dev\jubmoo10_src\Jubmoo.c"
+"D:\workspace\win-dev\jubmoo\Jubmoo.c"
 ]
-Creating command line "cl.exe @C:\Users\kasam\AppData\Local\Temp\RSP1E1F.tmp" 
-Creating temporary file "C:\Users\kasam\AppData\Local\Temp\RSP1E20.tmp" with contents
+Creating command line "cl.exe @C:\Users\kasam\AppData\Local\Temp\RSP6C5F.tmp" 
+Creating temporary file "C:\Users\kasam\AppData\Local\Temp\RSP6C60.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:".\Release/Jubmoo.pdb" /machine:I386 /out:".\Release/Jubmoo.exe" 
-.\Release\Jubmoo.obj
-.\Release\jubmoo.res
+".\Release\Jubmoo.obj"
+".\Release\jubmoo.res"
 ]
-Creating command line "link.exe @C:\Users\kasam\AppData\Local\Temp\RSP1E20.tmp"
+Creating command line "link.exe @C:\Users\kasam\AppData\Local\Temp\RSP6C60.tmp"
 <h3>Output Window</h3>
+Compiling resources...
 Compiling...
 Jubmoo.c
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(197) : warning C4028: formal parameter 1 different from declaration
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(197) : warning C4028: formal parameter 2 different from declaration
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(432) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(440) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(693) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(702) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(710) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(726) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(734) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(743) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(749) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(755) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(1168) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
-D:\workspace\dev\jubmoo10_src\Jubmoo.c(1214) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(197) : warning C4028: formal parameter 1 different from declaration
+D:\workspace\win-dev\jubmoo\Jubmoo.c(197) : warning C4028: formal parameter 2 different from declaration
+D:\workspace\win-dev\jubmoo\Jubmoo.c(432) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(440) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(693) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(702) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(710) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(726) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(734) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(743) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(749) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(755) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(1168) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
+D:\workspace\win-dev\jubmoo\Jubmoo.c(1214) : warning C4113: 'int (__stdcall *)()' differs in parameter lists from 'int (__stdcall *)(struct HWND__ *,unsigned int ,unsigned int ,long )'
 Linking...
 
 
