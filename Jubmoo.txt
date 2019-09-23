@@ -1,0 +1,45 @@
+//====================================================================
+//			Jubmoo for Windows v.1.0b
+//     start : 28/10/94
+//		v1.0 (first finish)	:  1/12/94
+// 		v1.0			: 18/ 6/95
+//		v1.0a			:  9/ 9/96
+//		v1.0b			: 28/ 2/98
+//====================================================================
+About: ===============
+	I first wrote this game in 1994 on my spare time. this time
+i have studied C Window programming. From my curiousness, i found
+that MS-Hearts use nddeapi.dll. Something occur, what is it? how can
+I make the game like this? because i love 'Jubmoo' in Thai style
+which i love to play with my friend. so i've studied SDK for Win3.1,
+yahoo, i knew that. It's Network DDE ! I could make it.
+
+History: =============
+1/12/94	it has been released with no computer player that
+		can play smart enough. i almost played on network with
+		my friend
+18/6/95	Improve everything. eliminate major,minor bug.
+ 9/9/96	I have add smart computer player. ( much better than
+		the first release, but not much more than human )
+28/2/98	Recompile and modify something to run on Win95.
+
+Trouble shooting: ====
+	:I found some error, when play on Win NT4.0. screen error.
+but can play. and will have error dialog show up at starting up.
+don't worry about it. 'spawn' function take different effect on Win NT.
+	:Sometimes, maybe you can't play network game. i don't know why.
+You may restart your computer
+
+Technical: ===========
+	If you want to know about this program, source code, BUG report
+mail me anytime.
+
+Credit: ==============
+	If you love this. Send me your cheer up mail or electronic
+creeting card. 
+
+Contact: =============
+	E-Mail:			Homepage:
+=====================================================================
+	kasamsun@hotmail.com		www2.samart.co.th/~kasamsun
+=====================================================================
