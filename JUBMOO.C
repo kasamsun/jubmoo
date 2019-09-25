@@ -476,7 +476,11 @@ long FAR PASCAL WndProc (HWND hwnd,UINT message,WORD wParam,LONG lParam)
 			ReleaseDC(hWnd,hdc);
 			return 0;
 		case WM_PAINT:
-			BeginPaint (hwnd, &ps) ;
+			BeginPaint (hwnd, &ps) ;		
+		
+			htmp = (HBRUSH)SelectObject(ps.hdc,CreateSolidBrush(RGB(192,192,192)));		
+			Rectangle(ps.hdc,0,0,800,600);		
+			DeleteObject(SelectObject(ps.hdc,htmp));
 			htmp = SelectObject(ps.hdc,CreatePen(PS_SOLID,1,RGB(128,128,128)));
 			MoveToEx(ps.hdc,4,400,NULL);
 			LineTo(ps.hdc,595,400);
@@ -509,11 +513,7 @@ long FAR PASCAL WndProc (HWND hwnd,UINT message,WORD wParam,LONG lParam)
 					(WORD)lpBitmapInfo->bmiHeader.biHeight,
 					lpBits,lpBitmapInfo,DIB_RGB_COLORS);
 			GlobalUnlock(hRes);
-			*/			
-		
-			htmp = (HBRUSH)SelectObject(ps.hdc,CreateSolidBrush(RGB(192,192,192)));		
-			Rectangle(ps.hdc,0,0,800,600);		
-			DeleteObject(SelectObject(ps.hdc,htmp));
+			*/
 
 			BitBlt(ps.hdc,150,100,300,200,hdcTable,0,0,SRCCOPY);
 
