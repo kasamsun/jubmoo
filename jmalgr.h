@@ -1,0 +1,61 @@
+
+#define		CLUB           0
+#define		DIAMOND			1
+#define		SPADE          2
+#define		HEART				3
+
+#define		CLUB_2			1
+#define		CLUB_3			2
+#define		CLUB_4			3
+#define		CLUB_5			4
+#define		CLUB_6	 		5
+#define		CLUB_7			6
+#define		CLUB_8			7
+#define		CLUB_9			8
+#define		CLUB_10			9
+#define		CLUB_J			10
+#define		CLUB_Q			11
+#define		CLUB_K			12
+#define		CLUB_A			13
+
+#define		DIAMOND_2		14
+#define		DIAMOND_3 		15
+#define		DIAMOND_4 		16
+#define		DIAMOND_5 		17
+#define		DIAMOND_6  		18
+#define		DIAMOND_7 		19
+#define		DIAMOND_8 		20
+#define		DIAMOND_9 		21
+#define		DIAMOND_10		22
+#define		DIAMOND_J		23
+#define		DIAMOND_Q		24
+#define		DIAMOND_K		25
+#define		DIAMOND_A		26
+
+#define		SPADE_2			27
+#define		SPADE_3			28
+#define		SPADE_4			29
+#define		SPADE_5			30
+#define		SPADE_6			31
+#define		SPADE_7			32
+#define		SPADE_8			33
+#define		SPADE_9			34
+#define		SPADE_10			35
+#define		SPADE_J			36
+#define		SPADE_Q			37
+#define		SPADE_K			38
+#define		SPADE_A			39
+
+#define		HEART_2			40
+#define		HEART_3			41
+#define		HEART_4			42
+#define		HEART_5			43
+#define		HEART_6			44
+#define		HEART_7			45
+#define		HEART_8			46
+#define		HEART_9			47
+#define		HEART_10			48
+#define		HEART_J			49
+#define		HEART_Q			50
+#define		HEART_K			51
+#define		HEART_A			52
