@@ -7,7 +7,7 @@
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#include "afxres.h"
+#include <windows.h>
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -438,26 +438,26 @@ CAPTION "About"
 FONT 10, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "OK",1,49,127,55,13
-    GROUPBOX        "",IDC_STATIC,3,2,147,51,WS_TABSTOP
-    CTEXT           "Jubmoo v.1.0b for Win95",IDC_STATIC,55,15,93,10
+    GROUPBOX        "",-1,3,2,147,51,WS_TABSTOP
+    CTEXT           "Jubmoo v.1.0b for Win95",-1,55,15,93,10
     ICON            "jubmoo",1291,10,10,18,20,WS_GROUP
-    CTEXT           "By >>Kasamsun NOHM",IDC_STATIC,56,27,90,8
+    CTEXT           "By >>Kasamsun NOHM",-1,56,27,90,8
     ICON            "jubmoo",1292,32,10,18,20,WS_GROUP
     ICON            "jubmoo",1294,10,32,18,20,WS_GROUP
     ICON            "jubmoo",1293,32,32,18,20,WS_GROUP
-    LTEXT           "28/2/1998",IDC_STATIC,102,40,37,9
+    LTEXT           "28/2/1998",-1,102,40,37,9
     CTEXT           "If u love this game or report bug => mail me : ",
-                    IDC_STATIC,7,93,132,8
+                    -1,7,93,132,8
     CTEXT           "Jubmoo's freeware,so feel free to distribute.",
-                    IDC_STATIC,5,56,144,9
+                    -1,5,56,144,9
     CTEXT           "It was first written in 1994 on my spare time.",
-                    IDC_STATIC,0,65,150,9
-    CTEXT           "Recompiled for Win95 in 1998.",IDC_STATIC,0,74,150,9
+                    -1,0,65,150,9
+    CTEXT           "Recompiled for Win95 in 1998.",-1,0,74,150,9
     CTEXT           "I alway play when i'm in university. lovely game",
-                    IDC_STATIC,0,83,150,9
-    CTEXT           "kasamsun@hotmail.com",IDC_STATIC,26,103,101,10,
+                    -1,0,83,150,9
+    CTEXT           "kasamsun@hotmail.com",-1,26,103,101,10,
                     SS_SUNKEN
-    CTEXT           "www2.samart.co.th/~kasamsun",IDC_STATIC,3,114,147,10
+    CTEXT           "www2.samart.co.th/~kasamsun",-1,3,114,147,10
 END
 
 

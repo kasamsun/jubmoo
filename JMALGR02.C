@@ -5,6 +5,11 @@
 //		Release	: 9/9/96
 //		Rating	: **
 //============================================================
+#include "jmalgr.h"
+
+extern int MyPlayerID;
+extern int MyVar[4][10];		// variable , constant flag to store some knownledge
+
 int SuperPig(void)
 {
 	///////////// change to CHOUAN mode ///////////////

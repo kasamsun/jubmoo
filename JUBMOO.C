@@ -6,7 +6,7 @@
 //====================================================================
 
 // if defind DEBUG_ON , program will gen trace file with JM.deb
-#define	DEBUG_OfN
+#define	DEBUG_OFF
 
 #include <windows.h>
 #include <ddeml.h>
@@ -18,6 +18,7 @@
 #include <process.h>
 
 #include "resource.h"
+#include "jmalgr.h"
 //======================= define structure ========================
 struct PLAYER
 {
@@ -192,7 +193,7 @@ FILE			*fp = NULL;
 
 //=================================================================
 //====================== procedure ===============================
-int PASCAL WinMain (HANDLE hInstance, HANDLE hPrevInstance,
+int PASCAL WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
 					LPSTR lpszCmdParam, int nCmdShow)
 {
 	MSG         msg ;
@@ -245,14 +246,11 @@ int PASCAL WinMain (HANDLE hInstance, HANDLE hPrevInstance,
 
 	ScrWidth = 600 + GetSystemMetrics(SM_CXDLGFRAME)*2;
 	ScrHeight = 420 + GetSystemMetrics(SM_CYCAPTION) + GetSystemMetrics(SM_CYDLGFRAME)*2;
-	hWnd = CreateWindowEx(WS_EX_DLGMODALFRAME,
+	hWnd = CreateWindowEx(
+					WS_EX_DLGMODALFRAME,
 					szAppName,         // window class name
 					"Jubmoo for Windows",     // window caption
-					DS_MODALFRAME|
-					WS_POPUP | WS_VISIBLE |
-					WS_CAPTION |
-					WS_BORDER ,
-					//WS_SYSMENU,//|WS_MINIMIZEBOX,//|WS_MAXIMIZEBOX,
+					DS_MODALFRAME| WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_BORDER ,	//WS_SYSMENU,//|WS_MINIMIZEBOX,//|WS_MAXIMIZEBOX,
 					(GetSystemMetrics(SM_CXFULLSCREEN)-ScrWidth)/2,
 					(GetSystemMetrics(SM_CYFULLSCREEN)-ScrHeight)/2,
 					ScrWidth,           // initial x size
@@ -299,7 +297,7 @@ int PASCAL WinMain (HANDLE hInstance, HANDLE hPrevInstance,
 long FAR PASCAL WndProc (HWND hwnd,UINT message,WORD wParam,LONG lParam)
 {
 	PAINTSTRUCT ps;
-	FARPROC		lpfnDialog,lpfnStatDlg,lpfnPigDlg;
+	DLGPROC		lpfnDialog,lpfnStatDlg,lpfnPigDlg;
 	static		LOGFONT		lf;
 	static		iChkLButt = FALSE;
 	static		iCrdPosX,iCrdPosY;
@@ -645,7 +643,7 @@ long FAR PASCAL WndProc (HWND hwnd,UINT message,WORD wParam,LONG lParam)
 				if ( (iChkLButt = ChkCardPosition(&iCrdPosX,&iCrdPosY)) > 0 )
 				{
 					hCur = LoadCursor(ghResInstance,MAKEINTRESOURCE(BackCard+10));
-					SetClassLong(hWnd,GCL_HCURSOR,(LONG)hCur);
+					SetClassLong(hWnd, GCLP_HCURSOR,(LONG)hCur);
 					SetCursor(hCur);
 					hdc = GetDC(hWnd);
 					iCrdPosX++;
@@ -677,7 +675,7 @@ long FAR PASCAL WndProc (HWND hwnd,UINT message,WORD wParam,LONG lParam)
 					UpdateOwnCard();
 				}
 				hCur = LoadCursor(ghResInstance,MAKEINTRESOURCE(BackCard));
-				SetClassLong(hWnd,GCL_HCURSOR,(LONG)hCur);
+				SetClassLong(hWnd, GCLP_HCURSOR,(LONG)hCur);
 				SetCursor(hCur);
 				iChkLButt = FALSE;
 			}
@@ -710,7 +708,7 @@ long FAR PASCAL WndProc (HWND hwnd,UINT message,WORD wParam,LONG lParam)
 					if (DialogBox(ghResInstance,"option",hWnd,lpfnDialog)==1)
 					{
 						hCur = LoadCursor(ghResInstance,MAKEINTRESOURCE(BackCard));
-						SetClassLong(hWnd,GCL_HCURSOR,(LONG)hCur);
+						SetClassLong(hWnd, GCLP_HCURSOR,(LONG)hCur);
 						SetCursor(hCur);
 						sprintf(tmpbuf,"%d",BackCard-52);
 						WritePrivateProfileString("Init","BackCard",tmpbuf,szIniName);
@@ -1090,7 +1088,7 @@ int PutCardImagef(HDC hdcsc,int xpos, int ypos)
 //===============================================================
 int InitJubmoo(void)
 {
-	FARPROC		lpfnDlg;
+	DLGPROC		lpfnDlg;
 	int i;
 	HCURSOR		hCur;
 
@@ -1186,7 +1184,7 @@ int InitJubmoo(void)
 			WritePrivateProfileString("Init","BackCard","4",szIniName);
 		}
 		hCur = LoadCursor(ghResInstance,MAKEINTRESOURCE(BackCard));
-		SetClassLong(hWnd,GCL_HCURSOR,(LONG)hCur);
+		SetClassLong(hWnd, GCLP_HCURSOR,(LONG)hCur);
 		SetCursor(hCur);
 	}
 
@@ -2992,68 +2990,7 @@ BOOL FAR PASCAL HelpContentDlg(HWND hDlg,UINT message,WORD wParam,LONG lParam)
 /*                 AI function 									*/
 /*=======================================================*/
 
-#define		CLUB           0
-#define		DIAMOND			1
-#define		SPADE          2
-#define		HEART				3
-
-#define		CLUB_2			1
-#define		CLUB_3			2
-#define		CLUB_4			3
-#define		CLUB_5			4
-#define		CLUB_6	 		5
-#define		CLUB_7			6
-#define		CLUB_8			7
-#define		CLUB_9			8
-#define		CLUB_10			9
-#define		CLUB_J			10
-#define		CLUB_Q			11
-#define		CLUB_K			12
-#define		CLUB_A			13
-
-#define		DIAMOND_2		14
-#define		DIAMOND_3 		15
-#define		DIAMOND_4 		16
-#define		DIAMOND_5 		17
-#define		DIAMOND_6  		18
-#define		DIAMOND_7 		19
-#define		DIAMOND_8 		20
-#define		DIAMOND_9 		21
-#define		DIAMOND_10		22
-#define		DIAMOND_J		23
-#define		DIAMOND_Q		24
-#define		DIAMOND_K		25
-#define		DIAMOND_A		26
-
-#define		SPADE_2			27
-#define		SPADE_3			28
-#define		SPADE_4			29
-#define		SPADE_5			30
-#define		SPADE_6			31
-#define		SPADE_7			32
-#define		SPADE_8			33
-#define		SPADE_9			34
-#define		SPADE_10			35
-#define		SPADE_J			36
-#define		SPADE_Q			37
-#define		SPADE_K			38
-#define		SPADE_A			39
-
-#define		HEART_2			40
-#define		HEART_3			41
-#define		HEART_4			42
-#define		HEART_5			43
-#define		HEART_6			44
-#define		HEART_7			45
-#define		HEART_8			46
-#define		HEART_9			47
-#define		HEART_10			48
-#define		HEART_J			49
-#define		HEART_Q			50
-#define		HEART_K			51
-#define		HEART_A			52
 //====================== AI variable =========================
-int MyPlayerID = 0;
 int CurOrder = 1;					// Current order of this round -> 1-4
 int CurFace = FREE;				// Current face of this round  -> FREE,1-4
 int HistLeaded[4];				// no. of each face leaded
@@ -3064,6 +3001,7 @@ BYTE StatCard[53];					// status of card
 int ChkChuan;
 int ChkBigChuan;
 int ChkScore;
+int MyPlayerID = 0;
 int MyVar[4][10];		// variable , constant flag to store some knownledge
 //================ AI function declaration ==================
 int CardPlayer(int);
@@ -3710,12 +3648,10 @@ int TotalScore(int player)
 	return Player[player].nScore+CurScore[player];
 }
 /*=================================================================*/
+
 //============================================================
 //           Algorithm for Jubmoo
 //============================================================
-int BullBoy(void);
-int SafeSelf(void);
-int SuperPig(void);
 
 int JubmooAI(void)
 {
@@ -3731,7 +3667,4 @@ int JubmooAI(void)
 			return SafeSelf();
 	}
 }
-#include "jmalgr01.c"
-#include "jmalgr02.c"
-#include "jmalgr04.c"
 

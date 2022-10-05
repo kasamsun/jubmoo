@@ -5,6 +5,11 @@
 //		Release	: 2/9/96
 //		Rating	: **
 //============================================================
+#include "jmalgr.h"
+
+extern int MyPlayerID;
+extern int MyVar[4][10];		// variable , constant flag to store some knownledge
+
 int SafeSelf(void)
 {
 	int tmp1,tmp2,tmp3;
